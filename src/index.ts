@@ -1,8 +1,10 @@
 import moleculer, { Context } from "moleculer";
 import { Action, Service } from "moleculer-decorators";
 
+const transporter = process.env.TRANSPORTER;
+
 const broker = new moleculer.ServiceBroker({
-  transporter: "nats",
+  transporter,
 });
 
 @Service()
